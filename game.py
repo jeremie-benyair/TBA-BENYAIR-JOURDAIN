@@ -30,12 +30,12 @@ class Game:
         
         # Setup rooms
 
-        forest = Room("Forest", "une forêt enchantée. Vous entendez une brise légère à travers la cime des arbres.")
-        self.rooms.append(forest)
-        tower = Room("Tower", "une immense tour en pierre qui s'élève au dessus des nuages.")
-        self.rooms.append(tower)
-        cave = Room("Cave", "une grotte profonde et sombre. Des voix semblent provenir des profondeurs.")
-        self.rooms.append(cave)
+        hotel = Room("Hôtel", "Bienvenue à l'hôtel de silent hill !Le receptionniste semble avoir été tué dasn d'atroces souffrances.Vous pouvez montyer à l'étage où se trouve les chambres ou descendre au sous-sol.")
+        self.rooms.append(hotel)
+        cinema = Room("Cinema", " Un êtrange film est actuellement en cours de diffusion.")
+        self.rooms.append(cinema)
+        eglise = Room("church", "l'église de silent hill.")
+        self.rooms.append(eglise)
         cottage = Room("Cottage", "un petit chalet pittoresque avec un toit de chaume. Une épaisse fumée verte sort de la cheminée.")
         self.rooms.append(cottage)
         swamp = Room("Swamp", "un marécage sombre et ténébreux. L'eau bouillonne, les abords sont vaseux.")
