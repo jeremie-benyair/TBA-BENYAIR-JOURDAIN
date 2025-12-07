@@ -30,13 +30,13 @@ class Game:
         
         # Setup rooms
 
-        hotel = Room("Hôtel", "Bienvenue à l'hôtel de silent hill !Le receptionniste semble avoir été tué dasn d'atroces souffrances.Vous pouvez montyer à l'étage où se trouve les chambres ou descendre au sous-sol.")
+        hotel = Room("Hôtel", "Bienvenue à l'hôtel de silent hill ! Le receptionniste semble avoir été tué dasn d'atroces souffrances.Vous pouvez montyer à l'étage où se trouve les chambres ou descendre au sous-sol.")
         self.rooms.append(hotel)
         cinema = Room("Cinema", " Un êtrange film est actuellement en cours de diffusion.")
         self.rooms.append(cinema)
-        eglise = Room("church", "l'église de silent hill.")
+        eglise = Room("Eglise abandonée", " ")
         self.rooms.append(eglise)
-        cottage = Room("Cottage", "un petit chalet pittoresque avec un toit de chaume. Une épaisse fumée verte sort de la cheminée.")
+        parc = Room("parc pour enfants abandonné", "un petit chalet pittoresque avec un toit de chaume. Une épaisse fumée verte sort de la cheminée.")
         self.rooms.append(cottage)
         swamp = Room("Swamp", "un marécage sombre et ténébreux. L'eau bouillonne, les abords sont vaseux.")
         self.rooms.append(swamp)
