@@ -19,38 +19,66 @@ class Game:
     # Setup the game
     def setup(self):
 
-        # Setup commands
-
+   
         help = Command("help", " : afficher cette aide", Actions.help, 0)
         self.commands["help"] = help
         quit = Command("quit", " : quitter le jeu", Actions.quit, 0)
         self.commands["quit"] = quit
-        go = Command("go", " <direction> : se déplacer dans une direction cardinale (N, E, S, O)", Actions.go, 1)
+        go = Command("go", " <direction> : se déplacer dans une direction cardinale (N, E, S, O) ou <sortie>", Actions.go, 1)
+        #modif au dessus
         self.commands["go"] = go
         
         # Setup rooms
 
-        hotel = Room("Hôtel", "Bienvenue à l'hôtel de silent hill ! Le receptionniste semble avoir été tué dasn d'atroces souffrances.Vous pouvez montyer à l'étage où se trouve les chambres ou descendre au sous-sol.")
-        self.rooms.append(hotel)
-        cinema = Room("Cinema", " Un êtrange film est actuellement en cours de diffusion.")
+        Neely_street= Room("Neely Street"," ")
+        self.rooms.append(Neely_street)
+        cinema = Room("Cinéma abandonné", " ")
         self.rooms.append(cinema)
-        eglise = Room("Eglise abandonée", " ")
+        hotel = Room("Hotel abandonné", " ")
+        self.rooms.append(hotel)
+        parc = Room("Parc pour enfants abandonné", " ")
+        self.rooms.append(parc)
+        bar= Room("Bar", "")
+        self.rooms.append(bar)
+        pharma = Room("Pharmacie", " ")
+        self.rooms.append(pharma)
+        croisement=Room("intersection"," au nord se situe Neely Street, au sud se situe Martin Street, à l'est se situe Lindsey Street et à l'ouest se situe Sanders Street.  ")
+        self.rooms.append(croisement)
+        Martin_street=Room("Martin Street", " ")
+        self.rooms.append(Martin_street)
+        Lindsey_street=Room("Lindsey_Street", " ")
+        self.rooms.append(Lindsey_street)
+        Sanders_street=Room("Sanders Street", " ")
+        self.rooms.append(Sanders_street)
+        biblio=Room("bibliothèque", " ")
+        self.rooms.append(biblio)
+        eglise=Room("église abandonnée", " ")
         self.rooms.append(eglise)
-        parc = Room("parc pour enfants abandonné", "un petit chalet pittoresque avec un toit de chaume. Une épaisse fumée verte sort de la cheminée.")
-        self.rooms.append(cottage)
-        swamp = Room("Swamp", "un marécage sombre et ténébreux. L'eau bouillonne, les abords sont vaseux.")
-        self.rooms.append(swamp)
-        castle = Room("Castle", "un énorme château fort avec des douves et un pont levis. Sur les tours, des flèches en or massif.")
-        self.rooms.append(castle)
+        etage=Room("1er étage", " ") 
+        self.rooms.append(etage)
+        chambre_1=Room("chambre 1", " ")
+        self.rooms.append(chambre_1)
+        chambre_2=Room(" chambre 2", " ")
+        cave=Room("cave", " ")
+        self.rooms.append(cave)
+        
+        
+        
+    
 
         # Create exits for rooms
-
-        forest.exits = {"N" : cave, "E" : None, "S" : castle, "O" : None}
-        tower.exits = {"N" : cottage, "E" : None, "S" : None, "O" : None}
-        cave.exits = {"N" : None, "E" : cottage, "S" : forest, "O" : None}
-        cottage.exits = {"N" : None, "E" : None, "S" : tower, "O" : cave}
-        swamp.exits = {"N" : tower, "E" : None, "S" : None, "O" : castle}
-        castle.exits = {"N" : forest, "E" : swamp, "S" : None, "O" : None}
+        
+        biblio={"sortie":Lindsey_street,"N": None,"E": None,"O":None,"S": None, "Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
+        bar.exits = {"sortie" :Sanders_street ,"N" : None, "E" : None, "S" : None, "O" : None,"Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
+        cinema.exits = {"sortie" : Sanders_street,"N": None,  "E" : None, "S" : None, "O" : None,"Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
+        eglise.exits = {"sortie" : Martin_street ,"N" : None, "E" : None, "S" : None, "O" : None,"Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
+        parc.exits = {"sortie_côté_Neely_street": Neely_street,"sortie_côté_Martin_street": Martin_street,"sortie": None , "N" : None, "E" : None, "S" : None, "O" : None,"Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
+        Neely_street.exits = {"N" : croisement, "E" : hotel, "S" : None, "O" : parc ,"Est": hotel, "Ouest": parc,"Nord": croisement,"Sud": None,"est": hotel, "ouest": parc,"nord": croisement,"sud": None}
+        pharma.exits = {"N" : None, "E" : None, "S" : None, "O" : None,"Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
+        croisement.exits={"N":Sanders_street,"E":Lindsey_street,"O":Martin_street,"S":Neely_street,"Est": Lindsey_street, "Ouest": Martin_street,"Nord": Sanders_street,"Sud": Neely_street,"est": Lindsey_street, "ouest": Martin_street,"nord": Sanders_street,"sud":Neely_street}
+        Martin_street.exits:{"N":eglise,"S": croisement,"O":parc,"E": None,"Est": None, "Ouest": parc,"Nord": eglise,"Sud": croisement,"est": None, "ouest": parc,"nord": eglise,"sud": None}
+        Sanders_street.exits={"N": None,"E": cinema,"O":bar,"S": croisement,"Est": cinema, "Ouest": bar,"Nord": None,"Sud": croisement,"est": cinema, "ouest": bar,"nord": None,"sud": croisement}
+        Lindsey_street.exits={"N": None,"E":biblio,"O":pharma,"S":croisement,"Est": biblio, "Ouest": pharma,"Nord": None,"Sud": croisement,"est": biblio, "ouest": pharma,"nord": None,"sud": croisement}
 
         # Setup player and starting room
 
