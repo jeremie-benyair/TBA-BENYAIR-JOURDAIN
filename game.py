@@ -76,14 +76,14 @@ class Game:
         Neely_street.exits = {"N" : croisement, "E" : hotel, "S" : None, "O" : parc ,"Est": hotel, "Ouest": parc,"Nord": croisement,"Sud": None,"est": hotel, "ouest": parc,"nord": croisement,"sud": None}
         pharma.exits = {"N" : None, "E" : None, "S" : None, "O" : None,"Est": None, "Ouest": None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
         croisement.exits={"N":Sanders_street,"E":Lindsey_street,"O":Martin_street,"S":Neely_street,"Est": Lindsey_street, "Ouest": Martin_street,"Nord": Sanders_street,"Sud": Neely_street,"est": Lindsey_street, "ouest": Martin_street,"nord": Sanders_street,"sud":Neely_street}
-        Martin_street.exits:{"N":eglise,"S": croisement,"O":parc,"E": None,"Est": None, "Ouest": parc,"Nord": eglise,"Sud": croisement,"est": None, "ouest": parc,"nord": eglise,"sud": None}
+        Martin_street.exits={"N":eglise,"S": croisement,"O":parc,"E": None,"Est": None, "Ouest": parc,"Nord": eglise,"Sud": croisement,"est": None, "ouest": parc,"nord": eglise,"sud": None}
         Sanders_street.exits={"N": None,"E": cinema,"O":bar,"S": croisement,"Est": cinema, "Ouest": bar,"Nord": None,"Sud": croisement,"est": cinema, "ouest": bar,"nord": None,"sud": croisement}
         Lindsey_street.exits={"N": None,"E":biblio,"O":pharma,"S":croisement,"Est": biblio, "Ouest": pharma,"Nord": None,"Sud": croisement,"est": biblio, "ouest": pharma,"nord": None,"sud": croisement}
 
         # Setup player and starting room
 
         self.player = Player(input("\nEntrez votre nom: "))
-        self.player.current_room = swamp
+        self.player.current_room = Neely_street
 
     # Play the game
     def play(self):
