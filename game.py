@@ -30,7 +30,7 @@ class Game:
         
         # Setup rooms
 
-        Neely_street= Room("Neely Street"," ")
+        Neely_street= Room("Neely Street"," au niveau de Neely Street ")
         self.rooms.append(Neely_street)
         cinema = Room("Cinéma abandonné", " ")
         self.rooms.append(cinema)
@@ -81,7 +81,7 @@ class Game:
         Lindsey_street.exits={"N": None,"E":biblio,"O":pharma,"S":croisement,"Est": biblio, "Ouest": pharma,"Nord": None,"Sud": croisement,"est": biblio, "ouest": pharma,"nord": None,"sud": croisement}
         cave.exits={"sortie":hotel, "N": None,"E":None,"O":None,"S":None,"Est":None, "Ouest":None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
         hotel.exits={"sortie":Neely_street,"cave":cave, "étage": etage,"N": None,"E":None,"O":None,"S":None,"Est":None, "Ouest":None,"Nord": None,"Sud": None,"est": None, "ouest": None,"nord": None,"sud": None}
-        etage.exits={"chambre 1": chambre_1, "chambre 2": chambre 2}
+        etage.exits={"chambre 1": chambre_1, "chambre 2": chambre_2}
 
         # Setup player and starting room
 
